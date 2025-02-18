@@ -133,7 +133,10 @@ export default function Dashboard() {
   return (
     <div className="w-1/2 mx-auto py-12">
       <div className="flex justify-between items-center mb-12">
-        <h1 className="text-2xl font-bold">My Movie Watchlist</h1>
+        <div>
+          <h1 className="text-2xl font-bold">My Movie Watchlist</h1>
+          <p className="text-sm">Signed in as {session?.user?.name}</p>
+        </div>
         <Button variant="danger" onClick={() => signOut()}>Sign Out</Button>
       </div>
       <div className="bg-white rounded shadow-md flex flex-col p-6 mb-12">
