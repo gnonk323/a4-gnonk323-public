@@ -3,8 +3,9 @@
 import Button from "@/components/Button";
 import { TextInput, TextArea } from "@/components/TextInput";
 import Data from "@/components/Data";
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface Movie {
   _id: string;
@@ -16,16 +17,24 @@ interface Movie {
 }
 
 export default function Dashboard() {
+  const { data: session, status } = useSession();
+  const router = useRouter();  // Initialize the router for redirection
+
   const [movieId, setMovieId] = useState("");
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [duration, setDuration] = useState("");
   const [notes, setNotes] = useState("");
   const [movies, setMovies] = useState<Movie[]>([]);
-
   const [isEditing, setIsEditing] = useState(false);
 
-  const { data: session } = useSession();
+  // Redirect to root if the user is not authenticated
+  useEffect(() => {
+    if (status === "loading") return;  // Prevent redirect if session is loading
+    if (status === "unauthenticated") {
+      router.push("/"); // Redirect to the root (sign-in page)
+    }
+  }, [status, router]);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -123,7 +132,10 @@ export default function Dashboard() {
 
   return (
     <div className="w-1/2 mx-auto py-12">
-      <h1 className="text-2xl font-bold mb-12">My Movie Watchlist</h1>
+      <div className="flex justify-between items-center mb-12">
+        <h1 className="text-2xl font-bold">My Movie Watchlist</h1>
+        <Button variant="danger" onClick={() => signOut()}>Sign Out</Button>
+      </div>
       <div className="bg-white rounded shadow-md flex flex-col p-6 mb-12">
         {!isEditing ? (
           <h2 className="text-lg font-semibold mb-4">Add Movie</h2>
