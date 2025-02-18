@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     await collection.insertOne(newMovie);
 
     return NextResponse.json(newMovie, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to create movie" }, { status: 500 });
   }
 }
@@ -46,7 +46,7 @@ export async function GET(request: Request) {
     const movies = await collection.find({ createdBy: user }).toArray();
 
     return NextResponse.json(movies, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch movies" }, { status: 500 });
   }
 }
@@ -151,7 +151,7 @@ export async function DELETE(request: Request) {
     }
 
     return NextResponse.json({ message: "Movie deleted successfully" }, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to delete movie" },
       { status: 500 }

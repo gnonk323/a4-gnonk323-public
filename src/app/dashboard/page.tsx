@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import { TextInput, TextArea } from "@/components/TextInput";
 import Data from "@/components/Data";
 import { useEffect, useState } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 interface Movie {

@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 import {useRouter} from "next/navigation";
 import { useEffect } from "react";
 
-export default function Login({ provider, ...props }: { provider?: string }) {
+export default function Login() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -21,7 +21,7 @@ export default function Login({ provider, ...props }: { provider?: string }) {
       <div className="flex flex-col bg-white rounded p-4 w-full max-w-md shadow-md">
         {session ? (null) : (
           <>
-            <p className="mb-3 text-center">You aren't signed in :(</p>
+            <p className="mb-3 text-center">You aren&apos;t signed in :(</p>
             <Button onClick={() => signIn("github")}>Sign in with GitHub</Button>
           </>
         )}
