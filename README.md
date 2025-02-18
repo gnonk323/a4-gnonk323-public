@@ -1,32 +1,36 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/RQyEtg8L)
-Assignment A4 - Web Component Framework
-===
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Due: Monday, February 17th, by 11:59 AM.
+## Getting Started
 
-For this assignment you will re-implement Assignment A3 using React components, a style framework, MongoDB, and either 
-1. the React framework, Express, and Passport GitHub authentication, or
-2. the NextJS framework with NextAuth for authentication
-Please keep in mind that implementing authentication is challenging and can be frustrating to debug. Please start this
-assignment early! You may deploy this project on any hosting service (Glitch, DigitalOcean, Heroku etc.).
-However, make sure to push your final application to your assignment GitHub repo so the course staff can review the code.
+First, run the development server:
 
-Deliverables
----
-Do the following to complete this assignment:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-1. Implement your project with the above requirements.
-3. Test your project to make sure that when someone goes to your main page on Glitch/Heroku/etc., it displays correctly.
-4. Ensure that your project has the proper naming scheme `a4-firstname-lastname` so we can find it.
-5. Push to your assignment repository and modify the README to the specifications below. Be sure to add *all* project files.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Sample Readme (delete the above when you're ready to submit, and modify the below so with your links and descriptions)
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Your Web Application Title
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-your hosting link e.g. http://a4-wilsonwong.glitch.me
+## Learn More
 
-Include a very brief summary of your project here and what you changed / added to assignment #3. 
+To learn more about Next.js, take a look at the following resources:
 
-Unlike previous assignments, this assignment will be solely graded on whether or not you successfully complete it. Partial credit will be generously given.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
